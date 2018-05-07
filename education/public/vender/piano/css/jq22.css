@@ -1,11 +1,6 @@
 @charset "utf-8";
 
-div#main {
-	margin:0 auto;
-	width:600px;
-	height:420px;
-	position:relative;
-}
+
 div#comment {
 	font-size:12px;
 	line-height:18px;
@@ -51,13 +46,7 @@ div.blackKey span {
 	position: relative;
 	top: -50px;
 }
-div#all {
-	width:600px;
-	height:600px;
-	padding:5px;
-	border: 1px solid #666;
-	margin:40px auto;
-}
+
 h1 {
 	color:#666;
 	font-size:12px;

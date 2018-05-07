@@ -2,76 +2,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Web Audio API 录音示例</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="UTF-8">
+    <title>小鱼干音乐小屋</title>
+    <link rel="stylesheet" href="./public/vender/bootstrap-3.3.7/css/bootstrap.css"/>
+    <link rel="stylesheet" href="./public//css/index.css"/>
     <style type="text/css">
-        nav {
-  background-color: #221C44;
-  height: 52px;
-  font-family: 'Roboto', sans-serif;
-  color: #969DA2;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 40px;
-  font-size: 14px;
-  line-height: 17px;
-  position: relative;
-  z-index: 2;
-}
-/* line 16, ../sass/tmp.scss */
-nav .rewind {
-  margin-left: 28px;
-  height: 16px;
-  cursor: pointer;
-}
-/* line 21, ../sass/tmp.scss */
-nav .play {
-  margin-left: 24px;
-  height: 24px;
-  cursor: pointer;
-}
-/* line 29, ../sass/tmp.scss */
-nav .play-icon:hover path, nav .play-icon:hover rect,
-nav .rewind-icon:hover path,
-nav .rewind-icon:hover rect,
-nav .pause-icon:hover path,
-nav .pause-icon:hover rect {
-  fill: #566574;
-}
-/* line 34, ../sass/tmp.scss */
-nav .pause-icon {
-  display: none;
-}
-/* line 37, ../sass/tmp.scss */
-nav .controls {
-  display: flex;
-  align-items: center;
-}
-/* line 41, ../sass/tmp.scss */
-nav .social a {
-  font-size: 24px;
-  color: #A8B5C2;
-  margin-left: 18px;
-}
-/* line 45, ../sass/tmp.scss */
-nav .social a:hover {
-  color: #566574;
-}
-
-/* line 51, ../sass/tmp.scss */
-.loading {
-  display: flex;
-  justify-content: center;
-  margin-top: 24px;
-  position: relative;
-  z-index: 1;
-}
-/* line 55, ../sass/tmp.scss */
-.loading .progress {
-  transition: width 0.3s linear;
-}
-
 /* line 62, ../sass/tmp.scss */
 .notes {
   display: flex;
@@ -154,7 +89,7 @@ nav .social a:hover {
 }
 /* line 128, ../sass/tmp.scss */
 .guitar .circle {
-  background-image: url(image/switch.png);
+  background-image: url(./public/vender/guitar/image/switch.png);
   background-size: 100%;
   background-repeat: no-repeat;
   width: 5vw;
@@ -205,20 +140,6 @@ nav .social a:hover {
   margin-top: 2px;
 }
 
-/* line 175, ../sass/tmp.scss */
-body {
-  background-color: #2c2d2d;
-  background-size: cover;
-  background-position: center;
-  margin: 0;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  font-family: 'Roboto', sans-serif;
-}
-/* line 183, ../sass/tmp.scss */
-body * {
-  user-select: none;
-}
 
 /* line 188, ../sass/tmp.scss */
 html,
@@ -228,9 +149,21 @@ body {
 }
     </style>
 </head>
-<body>
-
-
+<body class="body-backgroud">
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <div class="pull-left" style="overflow: auto;border-radius:30px;margin-left: 5px;margin-right: 10px"><img src="./public/image/head.jpg" height="50"></div>
+            <div class="pull-left"><a class="navbar-brand default-color" href="#">小鱼干吉他</a></div>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-5">
+            <p class="navbar-text navbar-right"><a href="./piano.html" class="navbar-link">钢琴专题</a></p>
+            <p class="navbar-text navbar-right"><a href="./guitar.html" class="navbar-link">吉他专题</a></p>
+            <p class="navbar-text navbar-right"><a href="./index.html" class="navbar-link">首页介绍</a></p>
+        </div>
+    </div>
+</nav>
+<div style="height: 140px"></div>
     <div class="notes">
         <div class="note" data-note="0">
             <div>
@@ -311,9 +244,26 @@ body {
 
     <div class="guitar">
         <div class="circle"></div>
-        <img src="image/guitar.png">
+        <img src="./public/vender/guitar/image/guitar.png">
     </div>
-    <audio src="mp3/shuffle_bruce.mp3"></audio>
+<div style="height: 150px;position:fixed;bottom:0px;background-color: rgb(44, 45, 45,0);color:#ffffff">
+    <h4 class="default-color" style="margin-left: 10px">联系方式</h4>
+    <dl class="dl-horizontal" style="margin-left:-120px">
+        <dt>地址</dt>
+        <dd>厦门市海沧区阿罗海101号</dd>
+        <dt>手机</dt>
+        <dd>100861314520</dd>
+        <dt>微信</dt>
+        <dd>1314520</dd>
+        <dt>邮箱</dt>
+        <dd>1314520@qq.com</dd>
+    </dl>
+</div>
+
+<video id="background-video" autoplay="autoplay" muted="muted" volume="0" poster="./public/image/default-background.jpg" loop="loop" >
+    <source type="video/webm" src="./public/video/default.webm">
+    <source type="video/mp4" src="./public/video/default.mp4">
+</video>
 </body>
 </html>
 <script>
@@ -425,21 +375,21 @@ body {
     //  '/uploads/161101/piano/Piano.ff.E5.mp3'
     //];
     let sounds = [
-      'mp3/Piano.ff.G4.mp3',
-      'mp3/Piano.ff.A4.mp3',
-      'mp3/Piano.ff.C5.mp3',
-      'mp3/Piano.ff.D5.mp3',
-      'mp3/Piano.ff.E5.mp3',
+      './public/vender/guitar/mp3/Piano.ff.G4.mp3',
+      './public/vender/guitar/mp3/Piano.ff.A4.mp3',
+      './public/vender/guitar/mp3/Piano.ff.C5.mp3',
+      './public/vender/guitar/mp3/Piano.ff.D5.mp3',
+      './public/vender/guitar/mp3/Piano.ff.E5.mp3',
 
-      'mp3/Piano.ff.G5.mp3',
-      'mp3/Piano.ff.A5.mp3',
-      'mp3/Piano.ff.C6.mp3',
-      'mp3/Piano.ff.D6.mp3',
-      'mp3/Piano.ff.D6.mp3',
-      'mp3/Piano.ff.E6.mp3',
-      'mp3/Piano.ff.G6.mp3',
-      'mp3/Piano.ff.A6.mp3',
-      'mp3/Piano.ff.D7.mp3'
+      './public/vender/guitar/mp3/Piano.ff.G5.mp3',
+      './public/vender/guitar/mp3/Piano.ff.A5.mp3',
+      './public/vender/guitar/mp3/Piano.ff.C6.mp3',
+      './public/vender/guitar/mp3/Piano.ff.D6.mp3',
+      './public/vender/guitar/mp3/Piano.ff.D6.mp3',
+      './public/vender/guitar/mp3/Piano.ff.E6.mp3',
+      './public/vender/guitar/mp3/Piano.ff.G6.mp3',
+      './public/vender/guitar/mp3/Piano.ff.A6.mp3',
+      './public/vender/guitar/mp3/Piano.ff.D7.mp3'
     ];
 
     let buffer = new Buffer(context, sounds);
