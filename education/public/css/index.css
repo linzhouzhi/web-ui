@@ -166,6 +166,11 @@ a{
     text-decoration:none
 }
 
+.thumbnail .caption{
+    text-align: center;
+    color:#5a5a5a;
+}
+
 a:visited {color:#ff7519;text-decoration:none}
 a:hover   {color:#ff7519;text-decoration:none}
 a:active  {color:#ff7519;text-decoration:none}
