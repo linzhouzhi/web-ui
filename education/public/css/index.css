@@ -171,6 +171,10 @@ a{
     color:#5a5a5a;
 }
 
+.dropdown-menu > li > a:hover{
+    background-color: #979797;
+}
+
 a:visited {color:#ff7519;text-decoration:none}
 a:hover   {color:#ff7519;text-decoration:none}
 a:active  {color:#ff7519;text-decoration:none}
