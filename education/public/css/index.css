@@ -56,7 +56,7 @@ a.navbar-brand.default-color,.default-color{
     background-color: #ffffff;
 }
 .page-panel{
-    height: 850px;
+    height: 860px;
 }
 .page-target{
     padding-top: 0px;
@@ -64,7 +64,7 @@ a.navbar-brand.default-color,.default-color{
 .page-font{
     margin: 0 auto;
     color: #ffffff;
-    font-size: 50px;
+    font-size: 36px;
     text-align: center;
     margin-top: 450px;
     letter-spacing:10px
