@@ -1,2 +1,6 @@
+.DS_Store
+education/.DS_Store
+education/public/.DS_Store
+education/public/image/.DS_Store
 .idea/*
 education/public/video/*
